@@ -1,0 +1,5 @@
+<ul class="br-nav__nav-container">
+  <li class="br-nav__nav-item" *ngFor="let item of listOfUsers">
+    <button (click)="setUserId(item.id)">{{ item.name }}</button>
+  </li>
+</ul>
