@@ -1,0 +1,34 @@
+<div class="post-details-container">
+  <div class="post-author">
+    <img
+      src="{{
+        'https://picsum.photos/id/' +
+          postDetails.id +
+          postDetails.userId +
+          '/400/300'
+      }}"
+    />
+    <p>{{ selectedUserName }}</p>
+  </div>
+  <div class="img-container">
+    <img
+      src="{{ 'https://picsum.photos/id/' + postDetails.id * 5 + '/400/300' }}"
+    />
+  </div>
+  <div class="post-info">
+    <h3>{{ postDetails.title }}</h3>
+    <p>{{ postDetails.body }}</p>
+    <button *ngIf="!isShowComments" (click)="toggleComments()">
+      show comments
+    </button>
+    <button *ngIf="isShowComments" (click)="toggleComments()">
+      hide comments
+    </button>
+  </div>
+  <div *ngIf="isShowComments">
+    <div class="comment-container" *ngFor="let comment of comments">
+      <p class="comment-author">{{ comment.email }}</p>
+      <p class="comment-body">{{ comment.body }}</p>
+    </div>
+  </div>
+</div>

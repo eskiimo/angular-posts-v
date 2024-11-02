@@ -3,7 +3,7 @@ export interface User {
   name?: string;
   username?: string;
   email?: string;
-  age?: number; // Optional property
+  age?: number;
 }
 
 export interface Post {

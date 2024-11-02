@@ -1,3 +1,12 @@
-<app-nav [user]="user" (userChange)="user = $event"></app-nav>
+<app-nav
+  [selectedId]="selectedId"
+  [users]="users"
+  (idChanged)="changeId($event)"
+></app-nav>
 
-<app-card [user]="user" [post]="post"></app-card>
+<div class="wrapper">
+  <app-posts
+    [selectedId]="selectedId"
+    [selectedUserName]="selectedUserName"
+  ></app-posts>
+</div>

@@ -1,0 +1,8 @@
+<div class="posts-container">
+  <div class="post" *ngFor="let post of posts">
+    <app-details
+      [postDetails]="post"
+      [selectedUserName]="selectedUserName"
+    ></app-details>
+  </div>
+</div>
