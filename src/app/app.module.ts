@@ -7,9 +7,10 @@ import { PostsComponent } from './card/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { DetailsComponent } from './details/details.component';
+import { CharLimitPipe } from './pipes/char-limit.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PostsComponent, NavComponent, DetailsComponent],
+  declarations: [AppComponent, PostsComponent, NavComponent, DetailsComponent, CharLimitPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,23 +1,21 @@
 <div class="post-details-container">
   <div class="post-author">
-    <img
-      src="{{
-        'https://picsum.photos/id/' +
-          postDetails.id +
-          postDetails.userId +
-          '/400/300'
-      }}"
-    />
-    <p>{{ selectedUserName }}</p>
+    <img src="{{ selectedUser.profilePic }}" />
+    <p>{{ selectedUser.name }}</p>
   </div>
   <div class="img-container">
     <img
-      src="{{ 'https://picsum.photos/id/' + postDetails.id * 5 + '/400/300' }}"
+      src="{{ 'https://picsum.photos/id/' + postDetails.id + 5 + '/400/300' }}"
     />
   </div>
   <div class="post-info">
-    <h3>{{ postDetails.title }}</h3>
-    <p>{{ postDetails.body }}</p>
+    <h4>{{ postDetails.title }}</h4>
+    <p>
+      {{ postDetails.body | charLimit : 50 : isTextExpanded }}
+      <button class="see-more" *ngIf="!isTextExpanded" (click)="toggleText()">
+        see more
+      </button>
+    </p>
     <button *ngIf="!isShowComments" (click)="toggleComments()">
       show comments
     </button>

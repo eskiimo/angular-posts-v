@@ -11,6 +11,7 @@ export class PostsComponent implements OnChanges {
 
   @Input() selectedId!: Number;
   @Input() selectedUserName!: string;
+  @Input() selectedUser!: any;
 
   posts: any;
 
@@ -19,5 +20,6 @@ export class PostsComponent implements OnChanges {
       this.apiSevice.getPosts(this.selectedId).subscribe((posts) => {
         this.posts = posts;
       });
+    console.log(this.selectedUser);
   }
 }

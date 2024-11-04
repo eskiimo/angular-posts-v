@@ -10,13 +10,15 @@ export class DetailsComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   @Input() postDetails!: any;
-  @Input() selectedUserName!: string;
+  @Input() selectedUser!: any;
 
   comments: any[] = [];
-  isShowComments = true;
+  isShowComments = false;
+  isTextExpanded = false;
 
   ngOnInit() {
     this.getComments();
+    console.log(this.selectedUser);
   }
 
   getComments = () => {
@@ -27,5 +29,8 @@ export class DetailsComponent implements OnInit {
 
   toggleComments() {
     this.isShowComments = !this.isShowComments;
+  }
+  toggleText() {
+    this.isTextExpanded = !this.isTextExpanded;
   }
 }
