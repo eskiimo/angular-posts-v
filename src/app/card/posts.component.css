@@ -5,8 +5,12 @@
   align-items: center;
 }
 
+.post {
+  width: 100%;
+  max-width: 600px;
+}
+
 app-details {
   display: flex;
   justify-content: center;
-  max-width: 600px;
 }
